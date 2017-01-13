@@ -50,7 +50,7 @@ class DimRed {
 
     // filter application with adjustable paramater
     // this is an in place filter
-    filter(fil_fcn, paramater=1, comparison=cless){
+    filter(fil_fcn=variance, paramater=1, comparison=cless){
       for (var x=0; x< this.numFeature; x++){
         var feature = this.Mat.row(x).data;
         this.Features[x] = comparison(paramater, fil_fcn(feature));
