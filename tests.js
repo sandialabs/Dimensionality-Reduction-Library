@@ -9,3 +9,9 @@ test( 'default inits test', function(t) {
         var boring = new DimRed( new MiniMat([1,2,3,4], 2, 2) );
     }, '*', "new MiniMat() construction");
 });
+
+test( 'filter tests', function(t) {
+    t.plan(1);
+
+    t.equal(new DimRed(MiniMat.Eye(3)).Features.toString(), [false,false,false].toString(), "variance filter test");
+});
