@@ -1,0 +1,33 @@
+{
+  "name": "dimensionality-reduction",
+  "version": "0.0.1",
+  "description": "Javascript Dimensionality Reduction Library, built off of MiniMat.js",
+  "main": "dimred.js",
+  "scripts": {
+    "test": "node dimred.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/birm/dimensionality-reduction.git"
+  },
+  "keywords": [
+    "matrix",
+    "dimensionality",
+    "reduction",
+    "filter",
+    "math",
+    "linear",
+    "algbra",
+    "machine",
+    "learning",
+    "data",
+    "data",
+    "science"
+  ],
+  "author": "Ryan Birmingham",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/birm/dimensionality-reduction/issues"
+  },
+  "homepage": "https://github.com/birm/dimensionality-reduction#readme"
+}
