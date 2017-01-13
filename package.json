@@ -2,7 +2,7 @@
   "name": "dimensionality-reduction",
   "version": "0.0.1",
   "description": "Javascript Dimensionality Reduction Library, built off of MiniMat.js",
-  "Dependencies": {
+  "dependencies": {
     "minimat" : "latest"
   },
   "devDependencies": {
