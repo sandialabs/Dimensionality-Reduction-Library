@@ -1,4 +1,4 @@
-MiniMat = require("minimat");
+MiniMat = require("minimat.js");
 
 // some filter functions
 // for low variance filter

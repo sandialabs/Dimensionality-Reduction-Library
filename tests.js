@@ -1,5 +1,5 @@
 var test = require('tape');
-MiniMat = require("minimat");
+MiniMat = require("minimat.js");
 var DimRed = require("./dimred");
 
 test( 'default inits test', function(t) {
