@@ -41,7 +41,7 @@ var missing = function(arr){
     var nancount = arr.reduce(function(n, val) {
       return n + (isNaN(val));
     }, 0);
-    return (number nans)/arr.length
+    return nancount/arr.length
 };
 
 class DimRed {
