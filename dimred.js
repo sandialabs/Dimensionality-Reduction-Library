@@ -34,7 +34,15 @@ var variance = function(arr){
   return mean(arr.map(function(val){
     return Math.pow(val-mean(arr),2);
   }));
-}
+};
+
+var missing = function(arr){
+    // takes in an array (or MiniMat.data) of data to get missing data ratio of.
+    var nancount = arr.reduce(function(n, val) {
+      return n + (isNaN(val));
+    }, 0);
+    return (number nans)/arr.length
+};
 
 class DimRed {
     constructor(Mat) {
