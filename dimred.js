@@ -63,7 +63,7 @@ class DimRed {
     // this is an in place filter
     filter(fil_fcn=DimRed.variance, paramater=1, comparison=DimRed.cless){
       for (var x=0; x< this.numFeature; x++){
-        var feature = this.Mat.row(x).data;
+        var feature = this.Mat.col(x).data;
         this.Features[x] = comparison(paramater, fil_fcn(feature));
       }
       return this;

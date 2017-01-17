@@ -18,7 +18,9 @@ test( 'default inits test', function(t) {
 });
 
 test( 'filter tests', function(t) {
-    t.plan(1);
+    t.plan(2);
 
     t.equal(new DimRed(MiniMat.Eye(3)).filter().Features.toString(),  [false,false,false].toString(), "variance filter test");
+    var which_missing = new DimRed(new MiniMat([1,2,3,4,NaN,1,2,3,4,NaN,1,2,3,4,5],3,5)).filter(DimRed.missing, 0.1, DimRed.cgreat).Features.toString();
+    t.equal(which_missing, [true, true, true, true, false].toString(), "Missing data filter test.")
 });

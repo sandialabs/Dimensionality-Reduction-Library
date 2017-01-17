@@ -1,6 +1,6 @@
 {
   "name": "dimensionality-reduction",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Javascript Dimensionality Reduction Library, built off of MiniMat.js",
   "dependencies": {
     "minimat" : "latest"
