@@ -7,42 +7,8 @@
 
 MiniMat = require("minimat");
 
-// some functions we want to use with arrays
-function radd(x,y){
-    return x+y;
-}
-function mean(arr){
-  return arr.reduce(radd,0)/ arr.length;
-}
 
-// comparision functions
 
-function cless(x,y){
-  // if less than
-  return x < y;
-}
-
-function cgreat(x,y){
-  // if greater than
-  return x > y;
-}
-
-// some filter functions
-// for low variance filter
-var variance = function(arr){
-  // takes in an array (or MiniMat.data) of data to get variance of.
-  return mean(arr.map(function(val){
-    return Math.pow(val-mean(arr),2);
-  }));
-};
-
-var missing = function(arr){
-    // takes in an array (or MiniMat.data) of data to get missing data ratio of.
-    var nancount = arr.reduce(function(n, val) {
-      return n + (isNaN(val));
-    }, 0);
-    return nancount/arr.length
-};
 
 class DimRed {
     constructor(Mat) {
@@ -56,9 +22,46 @@ class DimRed {
         this.Features.fill(true);
     }
 
+    // some functions we want to use with arrays
+    static radd(x,y){
+        return x+y;
+    }
+    static mean(arr){
+      return arr.reduce(DimRed.radd,0)/ arr.length;
+    }
+
+    // comparision functions
+
+    static cless(x,y){
+      // if less than
+      return x < y;
+    }
+
+    static cgreat(x,y){
+      // if greater than
+      return x > y;
+    }
+
+    // some filter functions
+    // for low variance filter
+    static variance(arr){
+      // takes in an array (or MiniMat.data) of data to get variance of.
+      return DimRed.mean(arr.map(function(val){
+        return Math.pow(val-DimRed.mean(arr),2);
+      }));
+    };
+
+    static missing(arr){
+        // takes in an array (or MiniMat.data) of data to get missing data ratio of.
+        var nancount = arr.reduce(function(n, val) {
+          return n + (isNaN(val));
+        }, 0);
+        return nancount/arr.length
+    };
+
     // filter application with adjustable paramater
     // this is an in place filter
-    filter(fil_fcn=variance, paramater=1, comparison=cless){
+    filter(fil_fcn=DimRed.variance, paramater=1, comparison=DimRed.cless){
       for (var x=0; x< this.numFeature; x++){
         var feature = this.Mat.row(x).data;
         this.Features[x] = comparison(paramater, fil_fcn(feature));
