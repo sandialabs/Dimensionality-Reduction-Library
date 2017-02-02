@@ -92,6 +92,24 @@ class DimRed {
       }
       return this;
     }
+
+    /** async manager for filter dimensionality reduction; returns a promise.
+    * @param {function} [fil_fcn] - a function to filter upon
+    * @param {parameter} [parameter] - a paramater to compare the filter against
+    * @param {function} [comparison] - a function which returns true when data is desired to be kept, given filter(col) and the paramater
+    */
+    filter_promise(fil_fcn=DimRed.variance, parameter=1, comparison=DimRed.cless){
+      var manager = function(resolve, reject){
+        try{
+          this.filter(fil_fcn, parameter, comparison);
+          resolve(this.Features);
+        }
+        catch (err){
+          reject(err);
+        }
+      }
+      return new Promise(manager(resolve, reject));
+    }
     // pca
     // backward feature elim
     // forward feature construction
