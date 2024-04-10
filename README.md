@@ -9,3 +9,5 @@ Live releases [on npm here](https://www.npmjs.com/package/dimensionality-reducti
 Github dev page [here](https://github.com/birm/dimensionality-reduction)
 
 Documentation [here](http://www.rbirm.us/dimensionality-reduction/)
+
+SCR# 1214
